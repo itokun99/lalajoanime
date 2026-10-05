@@ -34,12 +34,9 @@ lalajoanime/
       snapshot.json    # schema snapshot, JSON, re-appliable
     seed/
       setup-schema.mjs # schema-as-code, creates collections/relations/policy
-      import-sql.mjs   # one-off import from the legacy MySQL dump
+      import-sql.mjs   # one-off import from the MySQL dump in seed/data/
       seed.mjs         # seed content from seed/data/
-      data/            # animes.json, streams.json, downloads.json
-  legacy/              # archived, read-only, not part of the running system
-    frontend-cra/      # old Create React App client
-    backend-codeigniter/ # old CodeIgniter app + weebonime_master.sql
+      data/            # animes.json, streams.json, downloads.json, weebonime_master.sql
   .omo/evidence/       # verification logs from the rebuild
 ```
 
@@ -139,8 +136,10 @@ Dropped on purpose:
 - Manga endpoints. The web UI never used them.
 - The visit counter. It wasn't kept in the new model.
 
-`legacy/` keeps the old trees untouched so the migration stays traceable.
-Don't build on them.
+The old Create React App client and CodeIgniter backend were removed from
+the working tree; they stay recoverable in git history (commit `da8c0cf`,
+the initial import of this refactor). The MySQL dump they carried lives on
+at `directus/seed/data/weebonime_master.sql`, which `import-sql.mjs` reads.
 
 ## Verification and evidence
 

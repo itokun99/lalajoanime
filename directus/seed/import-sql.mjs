@@ -1,7 +1,9 @@
 /**
  * import-sql.mjs — extract the legacy `animes` table into seed JSON.
  *
- * Reads legacy/backend-codeigniter/weebonime_master.sql as plain text
+ * Reads directus/seed/data/weebonime_master.sql as plain text (the copy of
+ * the legacy dump that ships with the seed; falls back to the legacy tree
+ * path when the archived tree is still present).
  * (Node:fs only, no SQL eval), parses every INSERT row of table `animes`
  * (columns anime_mal_id, anime_title, publish) and writes
  * directus/seed/data/animes.json as [{ mal_id, title, published }].
@@ -17,7 +19,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const SQL_PATH = path.resolve(here, "../../legacy/backend-codeigniter/weebonime_master.sql");
+const LOCAL_SQL_PATH = path.resolve(here, "data/weebonime_master.sql");
+const LEGACY_SQL_PATH = path.resolve(here, "../../legacy/backend-codeigniter/weebonime_master.sql");
+const SQL_PATH = fs.existsSync(LOCAL_SQL_PATH) ? LOCAL_SQL_PATH : LEGACY_SQL_PATH;
 const OUT_PATH = path.resolve(here, "data/animes.json");
 
 const sql = fs.readFileSync(SQL_PATH, "utf8");
