@@ -37,6 +37,8 @@ lalajoanime/
       import-sql.mjs   # one-off import from the MySQL dump in seed/data/
       seed.mjs         # seed content from seed/data/
       data/            # animes.json, streams.json, downloads.json, weebonime_master.sql
+  deploy/              # production compose for the Dokploy deployment
+    docker-compose.yml # db + directus + web (env comes from Dokploy)
   .omo/evidence/       # verification logs from the rebuild
 ```
 
@@ -95,6 +97,40 @@ bun run dev
 
 The site runs at http://localhost:5173. It reads `VITE_DIRECTUS_URL`
 (default `/directus`, see below).
+
+## Deploy (Dokploy)
+
+Production runs on the Dokploy instance behind `lalajoanime.sundabuilder.id`.
+Dokploy owns the domain and the TLS certificate: the domain is attached to the
+`web` service inside Dokploy (port 80, Let's Encrypt) and `deploy/docker-compose.yml`
+is the file Dokploy runs — there is no out-of-band Traefik or host nginx config.
+
+Services in `deploy/docker-compose.yml`:
+
+| Service | Role |
+| --- | --- |
+| `web` | builds `frontend/Dockerfile`, serves the SPA and proxies `/directus/` |
+| `directus` | Directus 11, same origin as the site |
+| `db` | postgres 16, volume-backed |
+
+Every `${VAR}` comes from the compose service environment in Dokploy (the keys
+are listed in `deploy/.env.example`); nothing secret lives in the repo.
+
+Apply the schema and seed any environment over its URL:
+
+```sh
+DIRECTUS_URL=https://lalajoanime.sundabuilder.id/directus \
+DIRECTUS_ADMIN_EMAIL=you@example.com DIRECTUS_ADMIN_PASSWORD='...' \
+node directus/seed/setup-schema.mjs
+```
+
+`node directus/seed/seed.mjs` takes the same three variables.
+
+Dry-run the production topology locally:
+
+```sh
+cd deploy && cp .env.example .env && docker compose --env-file .env up -d --build
+```
 
 ## Routes
 

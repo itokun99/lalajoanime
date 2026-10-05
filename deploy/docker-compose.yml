@@ -1,0 +1,57 @@
+# Deployed by Dokploy as a compose service. Every ${VAR} below is supplied by
+# the Dokploy compose environment, never by a committed file. Domain routing is
+# Dokploy-owned: lalajoanime.sundabuilder.id -> web, which proxies /directus/.
+#
+# Local dry run:  docker compose --env-file .env up -d --build
+name: lalajoanime
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - lalajoanime-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  directus:
+    image: directus/directus:11
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - lalajoanime-uploads:/directus/uploads
+    environment:
+      KEY: ${DIRECTUS_KEY}
+      SECRET: ${DIRECTUS_SECRET}
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+      DB_CLIENT: pg
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PUBLIC_URL: https://lalajoanime.sundabuilder.id/directus
+      WEBSOCKETS_ENABLED: "false"
+      TELEMETRY: "false"
+
+  web:
+    build:
+      context: ../frontend
+    restart: unless-stopped
+    depends_on:
+      - directus
+
+volumes:
+  lalajoanime-db:
+  lalajoanime-uploads:
