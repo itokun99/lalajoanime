@@ -1,0 +1,535 @@
+SYNTAX_EXIT=0
+POST /auth/login
+{
+  "email": "<DIRECTUS_ADMIN_EMAIL>",
+  "password": "*** (redacted)"
+}
+GET /collections/animes
+POST /collections
+{
+  "collection": "animes",
+  "meta": {
+    "icon": "movie",
+    "note": "Anime catalogue entries synced from external sources."
+  },
+  "schema": {},
+  "fields": [
+    {
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "note": "Primary key"
+      },
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": true,
+        "is_nullable": false
+      }
+    },
+    {
+      "field": "mal_id",
+      "type": "integer",
+      "meta": {
+        "interface": "input"
+      },
+      "schema": {
+        "is_nullable": true,
+        "is_unique": true
+      }
+    },
+    {
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": true
+      },
+      "schema": {
+        "is_nullable": false
+      }
+    },
+    {
+      "field": "alternative_title",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "type",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "score",
+      "type": "float",
+      "meta": {
+        "interface": "input"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "studios",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "duration",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "total_episodes",
+      "type": "integer",
+      "meta": {
+        "interface": "input"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "genres",
+      "type": "csv",
+      "meta": {
+        "interface": "tags"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "release_date",
+      "type": "date",
+      "meta": {
+        "interface": "datetime"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "trailer_url",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "synopsis",
+      "type": "text",
+      "meta": {
+        "interface": "input-multiline"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "poster_url",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "published",
+      "type": "boolean",
+      "meta": {
+        "interface": "boolean"
+      },
+      "schema": {
+        "is_nullable": false,
+        "default_value": true
+      }
+    },
+    {
+      "field": "date_created",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-created"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "note": "Created on"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "date_updated",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-updated"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "note": "Updated on"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    }
+  ]
+}
+GET /collections/anime_streams
+POST /collections
+{
+  "collection": "anime_streams",
+  "meta": {
+    "icon": "play_arrow",
+    "note": "Stream links per anime episode."
+  },
+  "schema": {},
+  "fields": [
+    {
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "note": "Primary key"
+      },
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": true,
+        "is_nullable": false
+      }
+    },
+    {
+      "field": "anime",
+      "type": "integer",
+      "meta": {
+        "special": [
+          "m2o"
+        ],
+        "interface": "select-dropdown-m2o"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "episode_number",
+      "type": "integer",
+      "meta": {
+        "interface": "input"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "episode_title",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": true
+      },
+      "schema": {
+        "is_nullable": false
+      }
+    },
+    {
+      "field": "quality",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "link",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "thumbnail_url",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "published",
+      "type": "boolean",
+      "meta": {
+        "interface": "boolean"
+      },
+      "schema": {
+        "is_nullable": false,
+        "default_value": true
+      }
+    },
+    {
+      "field": "date_created",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-created"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "note": "Created on"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "date_updated",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-updated"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "note": "Updated on"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    }
+  ]
+}
+GET /collections/anime_downloads
+POST /collections
+{
+  "collection": "anime_downloads",
+  "meta": {
+    "icon": "download",
+    "note": "Download links per anime."
+  },
+  "schema": {},
+  "fields": [
+    {
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "note": "Primary key"
+      },
+      "schema": {
+        "is_primary_key": true,
+        "has_auto_increment": true,
+        "is_nullable": false
+      }
+    },
+    {
+      "field": "anime",
+      "type": "integer",
+      "meta": {
+        "special": [
+          "m2o"
+        ],
+        "interface": "select-dropdown-m2o"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "server_name",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "link",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "size",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "quality",
+      "type": "string",
+      "meta": {
+        "interface": "input",
+        "required": false
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "published",
+      "type": "boolean",
+      "meta": {
+        "interface": "boolean"
+      },
+      "schema": {
+        "is_nullable": false,
+        "default_value": true
+      }
+    },
+    {
+      "field": "date_created",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-created"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "note": "Created on"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    },
+    {
+      "field": "date_updated",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-updated"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "note": "Updated on"
+      },
+      "schema": {
+        "is_nullable": true
+      }
+    }
+  ]
+}
+GET /relations?filter[many_collection][_eq]=anime_streams&filter[many_field][_eq]=anime
+POST /relations
+{
+  "collection_many": "anime_streams",
+  "collection_one": "animes",
+  "field_many": "anime"
+}
+GET /relations?filter[many_collection][_eq]=anime_downloads&filter[many_field][_eq]=anime
+POST /relations
+{
+  "collection_many": "anime_downloads",
+  "collection_one": "animes",
+  "field_many": "anime"
+}
+GET /policies?limit=-1
+GET /permissions?filter[policy][_eq]=<$public policy id>&filter[collection][_eq]=animes&filter[action][_eq]=read
+POST /permissions
+{
+  "policy": "<$public policy id>",
+  "collection": "animes",
+  "action": "read",
+  "permissions": {},
+  "validation": {},
+  "presets": {}
+}
+GET /permissions?filter[policy][_eq]=<$public policy id>&filter[collection][_eq]=anime_streams&filter[action][_eq]=read
+POST /permissions
+{
+  "policy": "<$public policy id>",
+  "collection": "anime_streams",
+  "action": "read",
+  "permissions": {},
+  "validation": {},
+  "presets": {}
+}
+GET /permissions?filter[policy][_eq]=<$public policy id>&filter[collection][_eq]=anime_downloads&filter[action][_eq]=read
+POST /permissions
+{
+  "policy": "<$public policy id>",
+  "collection": "anime_downloads",
+  "action": "read",
+  "permissions": {},
+  "validation": {},
+  "presets": {}
+}
+DRYRUN_EXIT=0

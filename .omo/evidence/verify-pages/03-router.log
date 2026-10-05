@@ -1,0 +1,10 @@
+$ grep -n "Route path=" src/router.tsx
+11:      <Route path="/" element={<Home />} />
+12:      <Route path="/anime-list" element={<AnimeList />} />
+13:      <Route path="/anime/:malId/:slug" element={<AnimeDetail />} />
+14:      <Route path="/watch/:streamId" element={<Watch />} />
+15:      <Route path="*" element={<NotFound />} />
+FOUND /
+FOUND /anime-list
+FOUND /anime/:malId/:slug
+FOUND /watch/:streamId

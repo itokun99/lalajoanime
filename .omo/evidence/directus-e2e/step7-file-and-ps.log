@@ -1,0 +1,5 @@
+-rw-r--r--  1 aleph  staff  30815 Oct  5 12:58 /Users/aleph/Projects/lalajoanime/directus/schema/snapshot.json
+   30815 /Users/aleph/Projects/lalajoanime/directus/schema/snapshot.json
+NAME                  IMAGE                  COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+directus-db-1         postgres:16-alpine     "docker-entrypoint.s…"   db         16 minutes ago   Up 16 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+directus-directus-1   directus/directus:11   "docker-entrypoint.s…"   directus   16 minutes ago   Up 7 minutes              0.0.0.0:8055->8055/tcp, [::]:8055->8055/tcp

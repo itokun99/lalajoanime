@@ -1,0 +1,5 @@
+frontend/src/pages/watch.tsx
+frontend/src/pages/home.tsx
+frontend/src/pages/anime-detail.tsx
+frontend/src/pages/anime-list.tsx
+MATCH_COUNT=       4

@@ -1,0 +1,18 @@
+Skema database weebonime
+
+//simpel formating
+
+nama tabel : animes
+========================
+  - anime_id
+  - anime_mal_id
+  - anime_title
+  - datez
+  - publish
+
+nama tabel : anime_details
+  - anime_detail_id
+  - anime_id
+  - anime_sinopsis
+  - anime_release_date
+  - anime_genres

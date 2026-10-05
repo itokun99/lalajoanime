@@ -1,0 +1,3 @@
+EXIT=0
+legacy/backend-codeigniter/application
+legacy/frontend-cra/src

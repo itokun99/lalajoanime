@@ -1,0 +1,54 @@
+name: directus
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DIRECTUS_DB_USER:-directus}
+      POSTGRES_PASSWORD: ${DIRECTUS_DB_PASSWORD:-directus}
+      POSTGRES_DB: ${DIRECTUS_DB_DATABASE:-directus}
+    ports:
+      - "${DIRECTUS_DB_PORT:-5432}:5432"
+    volumes:
+      - directus-db:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${DIRECTUS_DB_USER:-directus} -d ${DIRECTUS_DB_DATABASE:-directus}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  directus:
+    image: directus/directus:11
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${DIRECTUS_PORT:-8055}:8055"
+    volumes:
+      - directus-uploads:/directus/uploads
+      - ./schema:/directus/schema
+    environment:
+      KEY: ${DIRECTUS_SECRET:-dev-secret-change-me}
+      SECRET: ${DIRECTUS_SECRET:-dev-secret-change-me}
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL:-admin@example.com}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD:-admin1234}
+      DB_CLIENT: pg
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: ${DIRECTUS_DB_DATABASE:-directus}
+      DB_USER: ${DIRECTUS_DB_USER:-directus}
+      DB_PASSWORD: ${DIRECTUS_DB_PASSWORD:-directus}
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: http://localhost:5173
+      WEBSOCKETS_ENABLED: "false"
+
+volumes:
+  directus-db:
+  directus-uploads:

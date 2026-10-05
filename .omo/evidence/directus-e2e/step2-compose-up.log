@@ -1,0 +1,22 @@
+[+] up 1/2
+ ⠋ Container directus-db-1       Waiting                                                                            0.1s
+ ✔ Container directus-directus-1 Running                                                                            0.0s
+[+] up 1/2
+ ⠙ Container directus-db-1       Waiting                                                                            0.2s
+ ✔ Container directus-directus-1 Running                                                                            0.0s
+[+] up 1/2
+ ⠹ Container directus-db-1       Waiting                                                                            0.3s
+ ✔ Container directus-directus-1 Running                                                                            0.0s
+[+] up 1/2
+ ⠸ Container directus-db-1       Waiting                                                                            0.4s
+ ✔ Container directus-directus-1 Running                                                                            0.0s
+[+] up 1/2
+ ⠼ Container directus-db-1       Waiting                                                                            0.5s
+ ✔ Container directus-directus-1 Running                                                                            0.0s
+[+] up 2/2
+ ✔ Container directus-db-1       Healthy                                                                            0.5s
+ ✔ Container directus-directus-1 Running                                                                            0.0s
+---
+NAME                  IMAGE                  COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+directus-db-1         postgres:16-alpine     "docker-entrypoint.s…"   db         16 minutes ago   Up 16 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+directus-directus-1   directus/directus:11   "docker-entrypoint.s…"   directus   16 minutes ago   Up 7 minutes              0.0.0.0:8055->8055/tcp, [::]:8055->8055/tcp

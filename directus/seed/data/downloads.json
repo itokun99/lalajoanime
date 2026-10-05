@@ -1,0 +1,86 @@
+[
+  {
+    "mal_id": 32182,
+    "server_name": "GOOGLE DRIVE",
+    "link": "#",
+    "size": "150 MB",
+    "quality": "480p"
+  },
+  {
+    "mal_id": 32182,
+    "server_name": "GOOGLE DRIVE",
+    "link": "#",
+    "size": "320 MB",
+    "quality": "720p"
+  },
+  {
+    "mal_id": 32182,
+    "server_name": "MEGA",
+    "link": "#",
+    "size": "150 MB",
+    "quality": "480p"
+  },
+  {
+    "mal_id": 32182,
+    "server_name": "MEGA",
+    "link": "#",
+    "size": "320 MB",
+    "quality": "720p"
+  },
+  {
+    "mal_id": 32949,
+    "server_name": "GOOGLE DRIVE",
+    "link": "#",
+    "size": "120 MB",
+    "quality": "480p"
+  },
+  {
+    "mal_id": 32949,
+    "server_name": "GOOGLE DRIVE",
+    "link": "#",
+    "size": "280 MB",
+    "quality": "720p"
+  },
+  {
+    "mal_id": 32949,
+    "server_name": "MEGA",
+    "link": "#",
+    "size": "120 MB",
+    "quality": "480p"
+  },
+  {
+    "mal_id": 32949,
+    "server_name": "MEGA",
+    "link": "#",
+    "size": "280 MB",
+    "quality": "720p"
+  },
+  {
+    "mal_id": 36474,
+    "server_name": "GOOGLE DRIVE",
+    "link": "#",
+    "size": "140 MB",
+    "quality": "480p"
+  },
+  {
+    "mal_id": 36474,
+    "server_name": "GOOGLE DRIVE",
+    "link": "#",
+    "size": "300 MB",
+    "quality": "720p"
+  },
+  {
+    "mal_id": 36474,
+    "server_name": "MEGA",
+    "link": "#",
+    "size": "140 MB",
+    "quality": "480p"
+  },
+  {
+    "mal_id": 36474,
+    "server_name": "MEGA",
+    "link": "#",
+    "size": "300 MB",
+    "quality": "720p"
+  }
+]

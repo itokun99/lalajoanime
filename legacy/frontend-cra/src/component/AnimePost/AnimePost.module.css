@@ -1,0 +1,146 @@
+.animePostComponent {
+  position :relative;
+  padding : 24px 0 ;
+}
+.animePostBody {
+  position : relative;
+  line-height: 1.6;
+}
+.animePostRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+.animePostLeft {
+  width: 250px;
+}
+.animePostRight {
+  width: calc(100% - 250px);
+  padding-left : 24px;
+}
+.animePostBottom {
+  width: 100%;
+}
+/* anime left */
+.animeCover {
+  position: relative;
+  overflow: hidden;
+  margin-bottom : 14px;
+}
+.animeCoverPic {
+  width : 100%;
+}
+.animeInfo {
+  
+}
+.animeInfo ul {
+  padding : 0;
+  margin : 0;
+  list-style: none;
+  font-size: 14px;
+}
+.animeInfo ul > li > .infoTitle {
+  font-weight: 600;
+  margin-right : 10px;
+}
+.animeEpsList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+.epsList {
+  width: 25%;
+  padding : 0 4px 8px 4px;
+}
+.epsListItem {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 3px;
+  transition: .3s;
+}
+.epsListItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px 0px rgba(0,0,0,0.4)
+}
+.epsListThumb {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 65.25%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ddd;
+  cursor: pointer;
+  transition:.3s;
+}
+.epsListThumb img{
+  width: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+  transition:.3s;
+}
+.epsListThumb:hover {
+  opacity: 0.7;
+}
+.epsListText {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+}
+.epsListTitle {
+  display: inline-block;
+  background-color:#7158e2;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;  
+}
+
+@media (max-width: 1000px ){
+  .animePostBody {
+    padding : 0 14px;
+  }
+  .epsList {
+    width: 33.3333%;
+  }
+}
+@media (max-width: 640px){
+  .animePostLeft {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .animeCover {
+    width: 200px;
+  }
+  .animeInfo {
+    width: calc(100% - 200px);
+    padding-left: 14px;
+  }
+  .animePostRight {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px){
+  .epsList {
+    width: 50%;
+  }
+}
+
+@media (max-width: 425px){
+  .animeCover {
+    width: 150px;
+  }
+  .animeInfo {
+    width: calc(100% - 150px);
+  }
+}

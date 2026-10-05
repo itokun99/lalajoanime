@@ -1,0 +1,8 @@
+$ grep -rn PAGE PENDING src/pages/{home,anime-list,anime-detail,watch}.tsx
+grep_exit=1
+--- line counts ---
+     209 src/pages/home.tsx
+     230 src/pages/anime-list.tsx
+     353 src/pages/anime-detail.tsx
+     184 src/pages/watch.tsx
+     976 total

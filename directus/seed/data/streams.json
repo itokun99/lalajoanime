@@ -1,0 +1,226 @@
+[
+  {
+    "mal_id": 32182,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 3,
+    "episode_title": "Episode 3",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+3"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 3,
+    "episode_title": "Episode 3",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+3"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 3,
+    "episode_title": "Episode 3",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+3"
+  },
+  {
+    "mal_id": 32182,
+    "episode_number": 3,
+    "episode_title": "Episode 3",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+3"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 32949,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 1,
+    "episode_title": "Episode 1",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+1"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "360p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "480p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "720p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  },
+  {
+    "mal_id": 36474,
+    "episode_number": 2,
+    "episode_title": "Episode 2",
+    "quality": "1080p",
+    "link": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail_url": "https://placehold.co/320x180/0a110c/00ff88?text=Episode+2"
+  }
+]

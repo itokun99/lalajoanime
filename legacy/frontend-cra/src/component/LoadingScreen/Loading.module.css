@@ -1,0 +1,21 @@
+.loading {
+  position: fixed;
+  z-index: 9999;
+  background-color: #7158e2;
+  top : 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  transition : 1s;
+}
+
+.loadingIcon {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}

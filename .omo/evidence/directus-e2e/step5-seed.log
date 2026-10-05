@@ -1,0 +1,14 @@
+skip collection animes (exists)
+skip collection anime_streams (exists)
+skip collection anime_downloads (exists)
+skip relation anime_streams.anime (exists)
+skip relation anime_downloads.anime (exists)
+skip permission read animes (exists)
+skip permission read anime_streams (exists)
+skip permission read anime_downloads (exists)
+Schema setup complete.
+SCHEMA ensured via setup-schema.mjs.
+LOGIN ok (email/password).
+ANIMES upserted 3 (created 0, updated 3).
+EPISODES posted 0 streams and 0 downloads (skipped 3 animes with streams).
+SEED complete.

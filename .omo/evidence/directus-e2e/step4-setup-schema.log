@@ -1,0 +1,9 @@
+skip collection animes (exists)
+skip collection anime_streams (exists)
+skip collection anime_downloads (exists)
+skip relation anime_streams.anime (exists)
+skip relation anime_downloads.anime (exists)
+skip permission read animes (exists)
+skip permission read anime_streams (exists)
+skip permission read anime_downloads (exists)
+Schema setup complete.
