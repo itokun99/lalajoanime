@@ -1,0 +1,33 @@
+# Runtime
+## containers
+lalajoanime-prod-6wka9e-web-1	Up 3 minutes	80/tcp
+lalajoanime-prod-6wka9e-directus-1	Up 5 minutes	8055/tcp
+lalajoanime-prod-6wka9e-db-1	Up 5 minutes (healthy)	5432/tcp
+
+## traefik labels (web)
+traefik.docker.network=dokploy-network
+traefik.enable=true
+traefik.http.routers.lalajoanime-prod-6wka9e-15-web.entrypoints=web
+traefik.http.routers.lalajoanime-prod-6wka9e-15-web.middlewares=redirect-to-https@file
+traefik.http.routers.lalajoanime-prod-6wka9e-15-web.rule=Host(`lalajoanime.sundabuilder.id`)
+traefik.http.routers.lalajoanime-prod-6wka9e-15-web.service=lalajoanime-prod-6wka9e-15-web
+traefik.http.routers.lalajoanime-prod-6wka9e-15-websecure.entrypoints=websecure
+traefik.http.routers.lalajoanime-prod-6wka9e-15-websecure.rule=Host(`lalajoanime.sundabuilder.id`)
+traefik.http.routers.lalajoanime-prod-6wka9e-15-websecure.service=lalajoanime-prod-6wka9e-15-websecure
+traefik.http.routers.lalajoanime-prod-6wka9e-15-websecure.tls.certresolver=letsencrypt
+traefik.http.services.lalajoanime-prod-6wka9e-15-web.loadbalancer.server.port=80
+traefik.http.services.lalajoanime-prod-6wka9e-15-websecure.loadbalancer.server.port=80
+
+## internal http: index
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-wid
+## internal http: /directus/server/health
+{"status":"ok"}
+## internal http: counts
+animes: {"data":[{"count":{"id":"3"}}]}
+anime_streams: {"data":[{"count":{"id":"28"}}]}
+anime_downloads: {"data":[{"count":{"id":"12"}}]}

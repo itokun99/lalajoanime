@@ -1,0 +1,7 @@
+# Builds (2026-10-05T14:19:24Z)
+## local: cd frontend && bun run build
+exit 0 (vite build ok; pre-existing chunk-size warning)
+## docker: docker build -t lalajoanime-web:ulw-test frontend/
+exit 0 (oven/bun:1.4-alpine build stage + nginx:1.27-alpine runtime)
+## nginx -t on the built config
+configuration file /etc/nginx/nginx.conf syntax is ok

@@ -1,0 +1,18 @@
+# Public surface (pre-certificate pass, 2026-10-05T14:34:39Z)
+
+## DNS
+dig +short lalajoanime.sundabuilder.id A -> 43.134.178.93
+dig +short @8.8.8.8 lalajoanime.sundabuilder.id A -> 43.134.178.93
+note: the mac's configured resolver (1.1.1.1) was still lagging at this moment, so browser/curl runs pinned the IP (--resolve / --host-resolver-rules).
+
+## Browser (omowright owned engine, headless Chrome, pinned IP)
+url=https://lalajoanime.sundabuilder.id/  title=lalajoanime // streaming
+cards=MOB PSYCHO 100 [8.50] | KUZU NO HONKAI [7.50] | SWORD ART ONLINE: ALICIZATION [7.80]
+status bar: NORMAL | UTF-8 | LF | /
+console errors: none
+screenshot: 07-public-browser-precert.png
+
+## curl (pinned IP, TLS served before ACME issuance)
+GET / -> code=000 bytes=0
+
+GET /directus/server/health -> code=000

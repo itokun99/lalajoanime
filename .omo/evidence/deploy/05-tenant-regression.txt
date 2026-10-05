@@ -1,0 +1,30 @@
+# Tenant regression check (2026-10-05T14:19:23Z)
+## other tenant domains from this machine
+pagawe.sundabuilder.id           code=200
+api.pagawe.sundabuilder.id       code=200
+balantik.sundabuilder.id         code=200
+hudang.sundabuilder.id           code=000
+
+## hudang note (pre-existing, not a regression)
+hudang has NO domain row in Dokploy (select from domain -> 0 rows), so Traefik has no router:
+plain http://hudang.sundabuilder.id -> 404 (Traefik default), https -> no cert. Its container stays up.
+
+## containers after deploy (unchanged tenants + 3 new lalajoanime ones)
+ai-worker	Up 23 minutes (healthy)
+balantik-customer	Up 23 minutes (healthy)
+balantik-dashboard	Up 15 minutes (healthy)
+balantik-postgres	Up 23 minutes (healthy)
+balantik-redis	Up 23 minutes (healthy)
+dokploy.1.hm29ouwvn0hndge6f68izsb5a	Up 6 days (healthy)
+dokploy-postgres.1.uze5zctarilw5m9ewh15g05n7	Up 6 days
+dokploy-traefik	Up 9 hours
+hudang-t2zpcs.1.8b5z7zngotwh5iag4tidnm5qt	Up 4 days
+kitchen-service	Up 23 minutes (healthy)
+lalajoanime-prod-6wka9e-db-1	Up 5 minutes (healthy)
+lalajoanime-prod-6wka9e-directus-1	Up 5 minutes
+lalajoanime-prod-6wka9e-web-1	Up 4 minutes
+menu-service	Up 23 minutes (healthy)
+ordering-service	Up 23 minutes (healthy)
+pagawe-app-fth43f.1.9ivr6dabqygam0eagcc2ez0qf	Up 52 minutes
+pagawe-db-nryznk.1.x9fmayt4ugqcmkjgaf1mt379t	Up 6 days
+pagawe-hris-wp1mgy.1.jmw2n62evmlcp8m7vcb1wyt0b	Up 52 minutes

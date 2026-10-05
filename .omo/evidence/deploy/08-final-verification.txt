@@ -1,0 +1,58 @@
+# Final verification — https://lalajoanime.sundabuilder.id (2026-10-05T14:44:08Z)
+
+## criterion 1 — live page (plain DNS, valid TLS)
+GET / -> code=200 bytes=487 tls_verify=0
+<title>lalajoanime // streaming</title>
+browser (omowright owned engine, headless Chrome, real DNS, no cert bypass):
+  title=lalajoanime // streaming; cards: MOB PSYCHO 100 | KUZU NO HONKAI | SWORD ART ONLINE: ALICIZATION; footer + status bar present
+  screenshot: 08-public-browser-home.png
+
+## criterion 2 — API through the domain (anonymous)
+{"status":"ok"} <- code=200
+{"data":[{"count":{"id":"3"}}]} <- code=200
+
+## criterion 3 — production data
+animes           {"data":[{"count":{"id":"3"}}]}
+anime_streams    {"data":[{"count":{"id":"28"}}]}
+anime_downloads  {"data":[{"count":{"id":"12"}}]}
+deep stream      {"data":{"id":1,"anime":1,"episode_number":1,"episode_title":"Episode 1","quality":"360p","link":"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4","thumbnail_url":"h
+
+## criterion 4 — Dokploy owns the domain + TLS
+dokploy domain row: host=lalajoanime.sundabuilder.id https=t port=80 certificateType=letsencrypt serviceName=web composeId=oKpcnkUtzE9QnSKbkFMEa (domainId bq6Ol5i0lJ_RVbhUrmHOU)
+traefik labels on web container: routers ...-16-web (redirect-to-https) + ...-16-websecure (tls.certresolver=letsencrypt)
+subject=CN=lalajoanime.sundabuilder.id
+issuer=C=US, O=Let's Encrypt, CN=YR2
+notBefore=Oct  5 13:43:38 2026 GMT
+notAfter=Jan  3 13:43:37 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:lalajoanime.sundabuilder.id
+
+## criterion 5 — tenants unaffected
+pagawe.sundabuilder.id           code=200
+api.pagawe.sundabuilder.id       code=200
+balantik.sundabuilder.id         code=200
+ai-worker
+balantik-customer
+balantik-dashboard
+balantik-postgres
+balantik-redis
+dokploy.1.hm29ouwvn0hndge6f68izsb5a
+dokploy-postgres.1.uze5zctarilw5m9ewh15g05n7
+dokploy-traefik
+hudang-t2zpcs.1.8b5z7zngotwh5iag4tidnm5qt
+kitchen-service
+lalajoanime-prod-6wka9e-db-1
+lalajoanime-prod-6wka9e-directus-1
+lalajoanime-prod-6wka9e-web-1
+menu-service
+ordering-service
+pagawe-app-fth43f.1.sjmru0yokwms6d5q3sh1n0ugf
+pagawe-db-nryznk.1.x9fmayt4ugqcmkjgaf1mt379t
+pagawe-hris-wp1mgy.1.ikz46g5x7ck94q9ydr6osdnre
+
+## criterion 6 — repo
+1ed46f6 feat(deploy): add Dokploy production stack
+c645140 chore: add AGENTS.md knowledge base (#1)
+5169ccf chore: drop legacy trees from the working tree
+## main...origin/main
+?? .omo/evidence/deploy/

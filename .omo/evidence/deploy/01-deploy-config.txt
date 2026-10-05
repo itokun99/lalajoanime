@@ -1,0 +1,10 @@
+# Dokploy deployment evidence — lalajoanime
+date: 2026-10-05T14:19:02Z
+commit: 1ed46f6 (feat(deploy): add Dokploy production stack)
+
+## Committed deploy artifacts
+357 deploy/.env.example
+1529 deploy/docker-compose.yml
+44 frontend/.dockerignore
+342 frontend/Dockerfile
+1098 frontend/nginx.conf

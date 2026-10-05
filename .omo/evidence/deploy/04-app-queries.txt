@@ -1,0 +1,12 @@
+GET home list (3 animes) -> {"data":[{"id":1,"mal_id":32182,"title":"Mob Psycho 100","alternative_title":null,"type":"TV","status":"Finished Airing","score":8.5,"studios":"Bones","duration
+GET watch: stream detail (anime is numeric -> second fetch) -> {"data":{"id":1,"anime":1,"episode_number":1,"episode_title":"Episode 1","quality":"360p","link":"https://commondatastorage.googleapis.com/gtv-videos-bucket/sam
+GET watch: second fetch anime by id -> {"data":{"id":1,"mal_id":32182,"title":"Mob Psycho 100","alternative_title":null,"type":"TV","status":"Finished Airing","score":8.5,"studios":"Bones","duration"
+GET anime detail: streams for anime 1 -> {"data":[{"id":4,"anime":1,"episode_number":1,"episode_title":"Episode 1","quality":"1080p","link":"https://commondatastorage.googleapis.com/gtv-videos-bucket/s
+GET anime list: genre filter -> {"data":[{"id":1,"mal_id":32182,"title":"Mob Psycho 100","alternative_title":null,"type":"TV","status":"Finished Airing","score":8.5,"studios":"Bones","duration
+GET anime list: search mob -> {"data":[{"id":1,"mal_id":32182,"title":"Mob Psycho 100","alternative_title":null,"type":"TV","status":"Finished Airing","score":8.5,"studios":"Bones","duration
+GET directus admin html (subpath) -> <!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<base href="/directus/admin/" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />

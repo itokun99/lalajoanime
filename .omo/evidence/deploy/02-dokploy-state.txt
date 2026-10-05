@@ -1,0 +1,21 @@
+# Dokploy state (project / compose / environment / domain)
+       projectId       |    name     
+-----------------------+-------------
+ zSux0N2VxZ2lv84ZVHlef | lalajoanime
+(1 row)
+
+     environmentId     |    name    |       projectId       
+-----------------------+------------+-----------------------
+ v40O6y6uzbs3Uo6bgCVZl | production | zSux0N2VxZ2lv84ZVHlef
+(1 row)
+
+       composeId       |         appName         | sourceType |                customGitUrl                 | customGitBranch |        composePath        | autoDeploy | createEnvFile | composeStatus 
+-----------------------+-------------------------+------------+---------------------------------------------+-----------------+---------------------------+------------+---------------+---------------
+ oKpcnkUtzE9QnSKbkFMEa | lalajoanime-prod-6wka9e | git        | https://github.com/itokun99/lalajoanime.git | main            | deploy/docker-compose.yml | t          | t             | done
+(1 row)
+
+       domainId        |            host             | https | port | certificateType | serviceName |       composeId       
+-----------------------+-----------------------------+-------+------+-----------------+-------------+-----------------------
+ _0biWupD-S8QwdHxI7xzk | lalajoanime.sundabuilder.id | t     |   80 | letsencrypt     | web         | oKpcnkUtzE9QnSKbkFMEa
+(1 row)
+
